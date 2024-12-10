@@ -34,3 +34,20 @@ void printMatrix(int *matrix,int c,int r)
         }
     }
 }
+int *getRow(int *matrix,int id,int c,int r)
+{
+    if(id>r)
+    {
+        fprintf(stderr,"Bledy wiersz");
+        return NULL;
+    }
+    int *row=malloc(sizeof(int)*c);
+    for(int i=0;i<c;i++)
+        row[i]=matrix[id*c+i];
+    return row;
+}
+void multiplyRow(int *row,int val,int c)
+{
+    for(int i=0;i<c;i++)
+        row[i]*=val;
+}
