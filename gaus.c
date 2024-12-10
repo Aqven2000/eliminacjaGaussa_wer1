@@ -19,8 +19,8 @@ void fillMatrix(double *matrix,int c,int r)
         for(int j=0;j<r;j++)
         {
             //printf("%d",j*c+i);
-            //scanf("%lf",&matrix[j*c+i]);
-            matrix[j*c+i]=j*c+i+1;
+            scanf("%lf",&matrix[j*c+i]);
+            //matrix[j*c+i]=j*c+i+1;
         }
     }
 }
@@ -67,7 +67,7 @@ void elimGausa(double *matrix,int c,int r)
         {
             double factor=diag_val/matrix[j*c+i];
             multiplyRow(getRow(matrix,j,c,r),factor,c);
-            //subRow
+            subRow(matrix,j,i,c,r);
         }
     }
 }

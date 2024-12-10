@@ -12,7 +12,7 @@ int main()
     printf("\n");
     //multiplyRow(getRow(matrix,0,c,r),2.0,c);
     //printMatrix(matrix,c,r);
-    subRow(matrix,0,1,c,r);
+    elimGausa(matrix,c,r);
     printf("\n");
     printMatrix(matrix,c,r);
     return 0;
