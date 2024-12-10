@@ -14,9 +14,14 @@ int main()
     printf("\n");
     printMatrix(res,1,r);
     printf("\n");
-    //multiplyRow(getRow(matrix,0,c,r),2.0,c);
-    //printMatrix(matrix,c,r);
+
     elimGausa(matrix,res,c,r);
+    printf("\n");
+    printMatrix(matrix,c,r);
+    printf("\n");
+    printMatrix(res,1,r);
+
+    toIdentityMatrix(matrix,res,c,r);
     printf("\n");
     printMatrix(matrix,c,r);
     printf("\n");

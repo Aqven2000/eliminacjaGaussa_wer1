@@ -76,4 +76,26 @@ void elimGausa(double *matrix,double *res,int c,int r)
             subRow(res,j,i,1,r);
         }
     }
+
+    for(int i=c-1;i>=0;i--)
+    {
+        double diag_val=matrix[i*c+i]; //watosc na diagonalnej
+        for(int j=i-1;j>=0;j--)
+        {
+            double factor=diag_val/matrix[j*c+i];
+            multiplyRow(getRow(matrix,j,c,r),factor,c);
+            subRow(matrix,j,i,c,r);
+            multiplyRow(getRow(res,j,1,r),factor,1);
+            subRow(res,j,i,1,r);
+        }
+    }
+}
+
+void toIdentityMatrix(double *matrix,double *res,int c,int r)
+{
+    for(int i=0;i<r;i++)
+    {
+        res[i]/=matrix[i*c+i];
+        matrix[i*c+i]=1;
+    }
 }
