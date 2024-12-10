@@ -1,10 +1,10 @@
 #ifndef _GAUS_H_
 #define _GAUS_H_
 
-int *initMatrix(int,int);
-void fillMatrix(int *,int,int);
-void printMatrix(int *,int,int);
-int *getRow(int*,int,int,int);
-void multiplyRow(int *,int,int);
+double *initMatrix(int,int);
+void fillMatrix(double *,int,int);
+void printMatrix(double *,int,int);
+double *getRow(int*,int,int,int);
+void multiplyRow(double *,double,int);
 
 #endif
