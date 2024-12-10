@@ -7,6 +7,6 @@ void printMatrix(double *,int,int);
 double *getRow(double *,int,int,int);
 void multiplyRow(double *,double,int);
 void subRow(double *,int,int,int,int);
-void elimGausa(double *,int,int);
+void elimGausa(double *,double *,int,int);
 
 #endif

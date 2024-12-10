@@ -4,7 +4,7 @@
 
 double *initMatrix(int c,int r)
 {
-    double *matrix=malloc(sizeof(double)*r*(c+1));//ostatnia kolumna bedzie na wyniki
+    double *matrix=malloc(sizeof(double)*r*c);//ostatnia kolumna bedzie na wyniki
     if(matrix==NULL)
     {
         fprintf(stderr,"Alokacja pamieci sie wywalila");
@@ -22,6 +22,10 @@ void fillMatrix(double *matrix,int c,int r)
             scanf("%lf",&matrix[j*c+i]);
             //matrix[j*c+i]=j*c+i+1;
         }
+    }
+    for(int i=0;i<r;i++)
+    {
+        //scanf("%lf",&matrix[]);
     }
 }
 void printMatrix(double *matrix,int c,int r)
@@ -57,7 +61,7 @@ void subRow(double *matrix,int id_1,int id_2,int c,int r)
     for(int i=0;i<c;i++)
         r1[i]-=r2[i];
 }
-void elimGausa(double *matrix,int c,int r)
+void elimGausa(double *matrix,double *res,int c,int r)
 {
 
     for(int i=0;i<c;i++)
@@ -68,6 +72,8 @@ void elimGausa(double *matrix,int c,int r)
             double factor=diag_val/matrix[j*c+i];
             multiplyRow(getRow(matrix,j,c,r),factor,c);
             subRow(matrix,j,i,c,r);
+            multiplyRow(getRow(res,j,1,r),factor,1);
+            subRow(res,j,i,1,r);
         }
     }
 }
