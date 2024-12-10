@@ -42,7 +42,7 @@ double *getRow(double *matrix,int id,int c,int r)
         fprintf(stderr,"Bledy wiersz");
         return NULL;
     }
-    return matrix+id*r;
+    return matrix+id*c;
 }
 void multiplyRow(double *row,double val,int c)
 {

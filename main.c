@@ -9,7 +9,8 @@ int main()
     double *matrix=initMatrix(c,r);
     fillMatrix(matrix,c,r);
     printMatrix(matrix,c,r);
-
-
+    printf("\n");
+    multiplyRow(getRow(matrix,1,c,r),5.0,c);
+    printMatrix(matrix,c,r);
     return 0;
 }
