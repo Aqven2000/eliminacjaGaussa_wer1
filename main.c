@@ -10,7 +10,10 @@ int main()
     fillMatrix(matrix,c,r);
     printMatrix(matrix,c,r);
     printf("\n");
-    multiplyRow(getRow(matrix,1,c,r),5.0,c);
+    //multiplyRow(getRow(matrix,0,c,r),2.0,c);
+    //printMatrix(matrix,c,r);
+    subRow(matrix,0,1,c,r);
+    printf("\n");
     printMatrix(matrix,c,r);
     return 0;
 }
