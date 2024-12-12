@@ -61,14 +61,45 @@ void subRow(double *matrix,int id_1,int id_2,int c,int r)
     for(int i=0;i<c;i++)
         r1[i]-=r2[i];
 }
+
+void swapRows(double *matrix,int id_1,int id_2,int c)
+{
+    double tmp;
+    for(int i=0;i<c;i++)
+    {
+        tmp=matrix[id_1*c+i];
+        matrix[id_1*c+i]=matrix[id_2*c+i];
+        matrix[id_2*c+i]=tmp;
+    }
+}
+
 void elimGausa(double *matrix,double *res,int c,int r)
 {
 
     for(int i=0;i<c;i++)
     {
         double diag_val=matrix[i*c+i]; //watosc na diagonalnej
+        if(diag_val==0)
+        {
+            for(int k=i+1;k<r;k++)
+            {
+                if(matrix[k*c+i]!=0)
+                {
+                    swapRows(matrix,i,k,c);
+                    swapRows(res,i,k,1);
+                }
+            }
+            diag_val=matrix[i*c+i];
+            if(diag_val==0)
+            {
+                fprintf(stderr,"Nie mozna znalezc niezerowego elementu na diagonali");
+                exit(1);
+            }
+        }
         for(int j=i+1;j<r;j++)
         {
+            if(matrix[j*c+i]==0)
+                continue;
             double factor=diag_val/matrix[j*c+i];
             multiplyRow(getRow(matrix,j,c,r),factor,c);
             subRow(matrix,j,i,c,r);
@@ -95,6 +126,11 @@ void toIdentityMatrix(double *matrix,double *res,int c,int r)
 {
     for(int i=0;i<r;i++)
     {
+        if(matrix[i*c+i]==0)
+        {
+            fprintf(stderr, "Nie można przeksztalcic macierzy na tozsamosciowa (zerowa wartość na diagonali w wierszu %d).\n", i);
+            exit(0);
+        }
         res[i]/=matrix[i*c+i];
         matrix[i*c+i]=1;
     }

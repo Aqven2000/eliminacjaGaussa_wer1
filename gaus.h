@@ -7,6 +7,7 @@ void printMatrix(double *,int,int);
 double *getRow(double *,int,int,int);
 void multiplyRow(double *,double,int);
 void subRow(double *,int,int,int,int);
+void swapRows(double*,int,int,int);
 void elimGausa(double *,double *,int,int);
 void toIdentityMatrix(double *,double *,int,int);
 

@@ -21,7 +21,7 @@ int main()
     printf("\n");
     printMatrix(res,1,r);
 
-    toIdentityMatrix(matrix,res,c,r);
+    toIdentityMatrix(matrix,res,c,r);//zrobic sprawdzanie czy jest wynik
     printf("\n");
     printMatrix(matrix,c,r);
     printf("\n");
