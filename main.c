@@ -25,6 +25,11 @@ int main()
     printf("\n");
     printMatrix(matrix,c,r);
     printf("\n");
+    if(isPossible(matrix,c,r)==0)
+    {
+        printf("Macierz nie jest mozliwa do rozwiazania");
+        exit(1);
+    }
     printMatrix(res,1,r);
     return 0;
 }

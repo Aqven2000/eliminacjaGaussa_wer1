@@ -4,7 +4,7 @@
 
 double *initMatrix(int c,int r)
 {
-    double *matrix=malloc(sizeof(double)*r*c);//ostatnia kolumna bedzie na wyniki
+    double *matrix=malloc(sizeof(double)*r*c);
     if(matrix==NULL)
     {
         fprintf(stderr,"Alokacja pamieci sie wywalila");
@@ -73,13 +73,28 @@ void swapRows(double *matrix,int id_1,int id_2,int c)
     }
 }
 
+int isPossible(double *matrix,int c,int r)
+{
+    for(int i=0;i<c;i++)
+    {
+        for(int j=0;j<r;j++)
+        {
+            if(j==i)
+                continue;
+            if(matrix[j*c+i]!=0)
+                return 0;
+        }
+    }
+    return 1;
+}
+
 void elimGausa(double *matrix,double *res,int c,int r)
 {
 
     for(int i=0;i<c;i++)
     {
         double diag_val=matrix[i*c+i]; //watosc na diagonalnej
-        if(diag_val==0)
+        if(diag_val==0.)
         {
             for(int k=i+1;k<r;k++)
             {
@@ -87,6 +102,11 @@ void elimGausa(double *matrix,double *res,int c,int r)
                 {
                     swapRows(matrix,i,k,c);
                     swapRows(res,i,k,1);
+                    printf("\n");
+                    printMatrix(matrix,c,r);
+                    printf("\n");
+                    printMatrix(res,1,r);
+                    break;
                 }
             }
             diag_val=matrix[i*c+i];
@@ -107,6 +127,10 @@ void elimGausa(double *matrix,double *res,int c,int r)
             subRow(res,j,i,1,r);
         }
     }
+    printf("\n");
+    printMatrix(matrix,c,r);
+    printf("\n");
+    printMatrix(res,1,r);
 
     for(int i=c-1;i>=0;i--)
     {
