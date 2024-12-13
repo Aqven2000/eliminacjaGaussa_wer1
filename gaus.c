@@ -18,14 +18,8 @@ void fillMatrix(double *matrix,int c,int r)
     {
         for(int j=0;j<r;j++)
         {
-            //printf("%d",j*c+i);
             scanf("%lf",&matrix[j*c+i]);
-            //matrix[j*c+i]=j*c+i+1;
         }
-    }
-    for(int i=0;i<r;i++)
-    {
-        //scanf("%lf",&matrix[]);
     }
 }
 void printMatrix(double *matrix,int c,int r)
