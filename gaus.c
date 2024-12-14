@@ -96,10 +96,6 @@ void elimGausa(double *matrix,double *res,int c,int r)
                 {
                     swapRows(matrix,i,k,c);
                     swapRows(res,i,k,1);
-                    printf("\n");
-                    printMatrix(matrix,c,r);
-                    printf("\n");
-                    printMatrix(res,1,r);
                     break;
                 }
             }
@@ -121,11 +117,6 @@ void elimGausa(double *matrix,double *res,int c,int r)
             subRow(res,j,i,1,r);
         }
     }
-    printf("\n");
-    printMatrix(matrix,c,r);
-    printf("\n");
-    printMatrix(res,1,r);
-
     for(int i=c-1;i>=0;i--)
     {
         double diag_val=matrix[i*c+i]; //watosc na diagonalnej
