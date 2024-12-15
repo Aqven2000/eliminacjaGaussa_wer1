@@ -93,8 +93,6 @@ Jeśli program nie może zaalokować pamięci dla macierzy, wyświetli:
 ```
 Błąd: Alokacja pamięci nie powiodła się.
 ```
-
----
 ---
 
 ## Przykładowe użycie
@@ -108,7 +106,7 @@ Błąd: Alokacja pamięci nie powiodła się.
   ```
 - `input2.txt`
   ```
-  1 2
+  2 1
   8
   -1
 

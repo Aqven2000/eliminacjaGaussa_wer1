@@ -21,7 +21,7 @@ int main()
         return 1;
     }
 
-    double *res = initMatrixFromFile(file2, &helper, &c);
+    double *res = initMatrixFromFile(file2, &r, &helper);
     if (res == NULL)
     {
         fprintf(stderr, "Failed to load results from %s\n", file2);
