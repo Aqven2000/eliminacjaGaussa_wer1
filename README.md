@@ -20,16 +20,6 @@ Każdy plik wejściowy macierzy powinien mieć następującą strukturę:
    ar1 ar2 ar3 ... arc
    ```
 
-### **Przykładowy plik**
-Dla macierzy 3x3:
-
-```
-3 3
-1.0 2.0 3.0
-4.0 5.0 6.0
-7.0 8.0 9.0
-```
-
 ### **Format pliku wektora wyników**
 Jeśli wektor wyników jest przechowywany w osobnym pliku, powinien mieć podobny format:
 
@@ -46,16 +36,6 @@ Jeśli wektor wyników jest przechowywany w osobnym pliku, powinien mieć podobn
    ...
    br
    ```
-
-### **Przykładowy plik**
-Dla wektora wyników 3x1:
-
-```
-3 1
-10.0
-20.0
-30.0
-```
 
 ---
 
@@ -121,17 +101,17 @@ Błąd: Alokacja pamięci nie powiodła się.
 ### **Pliki wejściowe:**
 - `input.txt`
   ```
-  3 3
-  1.0 2.0 3.0
-  4.0 5.0 6.0
-  7.0 8.0 9.0
+  2 2
+  2 3
+  1 -1
+
   ```
 - `input2.txt`
   ```
-  3 1
-  10.0
-  20.0
-  30.0
+  1 2
+  8
+  -1
+
   ```
 
 ### **Polecenie:**
@@ -140,20 +120,3 @@ Skompiluj i uruchom program:
 gcc -o program main.c gaus.c read.c -lm
 ./program
 ```
-
-### **Wynik:**
-```
-Załadowana macierz:
-1.000000 2.000000 3.000000
-4.000000 5.000000 6.000000
-7.000000 8.000000 9.000000
-
-Wektor wyników:
-10.000000
-20.000000
-30.000000
-
-Macierz po eliminacji Gaussa:
-...
-```
-
