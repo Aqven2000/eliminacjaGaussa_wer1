@@ -4,7 +4,7 @@
 
 double *initMatrix(int c, int r)
 {
-    double *matrix = malloc(sizeof(double) * r * c);
+    double *matrix = malloc(sizeof(double *) * r * c);
     if (matrix == NULL)
     {
         fprintf(stderr, "Alokacja pamieci sie wywalila");
